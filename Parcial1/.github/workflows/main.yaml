@@ -3,7 +3,7 @@ name: Deploy to Surge
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -22,5 +22,5 @@ jobs:
       run: npm install --global surge
 
     - name: Deploy to Surge
-      run: surge ./ --domain TU_DOMINIO.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./ --domain fumbling-disease.surge.sh --token ${{ secrets.TOKEN }}
 ``
