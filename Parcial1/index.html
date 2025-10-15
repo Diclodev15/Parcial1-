@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Basic HTML Structure</title>
+		<meta name="description" content="A minimal, accessible HTML5 scaffold with header, main and footer." />
+		<style>
+			:root{
+				--bg:#f7f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280;
+				--max-width:900px;
+			}
+			html,body{height:100%;}
+			body{
+				margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg); color:#111827;
+				-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+				display:flex; align-items:center; justify-content:center; padding:32px;
+			}
+			.container{width:100%; max-width:var(--max-width); background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(15,23,42,0.06); overflow:hidden}
+			header{padding:24px 28px; border-bottom:1px solid #eef2ff; display:flex; align-items:center; justify-content:space-between}
+			header h1{margin:0; font-size:1.125rem}
+			nav a{color:var(--accent); text-decoration:none; margin-left:16px; font-weight:600}
+			main{padding:28px}
+			footer{padding:20px 28px; border-top:1px solid #f3f4f6; color:var(--muted); font-size:0.9rem}
+			.lead{color:var(--muted); margin-top:8px}
+			.card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9)); padding:18px; border-radius:8px}
+			a.skip-link{position:absolute; left:12px; top:12px; background:#111827; color:#fff; padding:8px 12px; border-radius:6px; transform:translateY(-120%); transition:transform .18s; z-index:1000}
+			a.skip-link:focus{transform:translateY(0)}
+			@media (max-width:520px){body{padding:16px} header,main,footer{padding-left:18px;padding-right:18px}}
+		</style>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to main content</a>
+		<div class="container" role="document">
+			<header role="banner">
+				<div>
+					<h1>Project Title</h1>
+					<div class="lead">A minimal HTML scaffold — modify for your project.</div>
+				</div>
+				<nav aria-label="Primary navigation">
+					<a href="#">Home</a>
+					<a href="#">About</a>
+				</nav>
+			</header>
+
+			<main id="main" role="main">
+				<section class="card" aria-labelledby="intro">
+					<h2 id="intro">Welcome</h2>
+					<p>This file provides a basic, accessible starting point for your website. Replace this content with your own.</p>
+				</section>
+
+				<section style="margin-top:18px" aria-labelledby="examples">
+					<h3 id="examples">Examples</h3>
+					<ul>
+						<li>Add your HTML, CSS and JavaScript files.</li>
+						<li>Keep accessibility in mind: landmarks, labels, and keyboard focus.</li>
+					</ul>
+				</section>
+			</main>
+
+			<footer role="contentinfo">
+				<small>&copy; <span id="year">2025</span> — Built with a minimal scaffold.</small>
+			</footer>
+		</div>
+		<script>
+			// Set current year automatically
+			try{document.getElementById('year').textContent = new Date().getFullYear();}catch(e){}
+		</script>
+	</body>
+</html>
